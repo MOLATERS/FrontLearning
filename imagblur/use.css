@@ -1,0 +1,30 @@
+body{
+	margin:0
+}
+header{
+	height: 160px;
+	position: releative;
+	overflow: hidden;
+}
+
+header>div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	weight: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    --offset:0px;
+    --blur:2px;
+}
+header>div>img{
+	display: block;
+    height: 120px;
+	width: 110%;
+	object-fit: cover;
+	transform: translatex(var(--offset));
+	filter: blur(var(--blur))
+}
