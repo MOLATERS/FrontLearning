@@ -1,0 +1,148 @@
+:root{
+    font-size:20px;
+    font-family: Helvetica;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 30rem;
+    background-color: #e493d0;
+    background-image:
+    radial-gradient(closest-side,rgba(235,105,78,1),rgba(235,105,78,0)),
+    radial-gradient(closest-side,rgba(243,11,164,1),rgba(243,11,164,0)),
+    radial-gradient(closest-side,rgba(254,234,131,1),rgba(254,234,131,0)),
+    radial-gradient(closest-side,rgba(170,142,245,1),rgba(70,142,245,0)),
+    radial-gradient(closest-side,rgba(248,192,147,1),rgba(248,192,147,0));
+    background-size: 
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+    background-position: 
+    -80vmax -80vmax,
+    60vmax 60vmax,
+    10vmax 10vmax,
+    -30vmax -30vmax,
+    50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation: 10s movement linear infinite;
+}
+
+body::after{
+    content:'';
+    display:block;
+    position:fixed;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.container{
+    z-index: 10;
+}
+.container > div {
+    display: block;
+    height: 6rem;
+    font-size: 6rem;
+    overflow: hidden;
+}
+
+.container > div > span {
+    display: block;
+    height: 6rem;
+    font-weight: bold;
+    color:brown;
+    letter-spacing: -.3rem;
+    text-align: center;
+    transition:.3s transform ease-in-out
+}
+
+.container:hover>div>span{
+    transform: translateY(-100%);
+}
+
+.container>div:nth-child(1){
+    background-color: rgba(223, 122, 122, 0.2);
+    transform: rotatex(30deg);
+    border-radius: 10px;
+}
+.container>div:nth-child(2){
+    transform: rotatex(-30deg);
+    background-color: rgba(215, 91, 91, 0.5);
+    border-radius: 10px;
+}
+.container>div:nth-child(3){
+    transform: rotatex(30deg);
+    border-radius: 10px;
+    background-color: rgba(223, 122, 122, 0.2);
+}
+.container>div:nth-child(4){
+    transform: rotatex(-30deg);
+    border-radius: 10px;
+    background-color: rgba(215, 91, 91, 0.5);
+}
+
+@keyframes movement {
+    0%,100%{
+        background-size: 
+        130vmax 130vmax,
+        80vmax 80vmax,
+        90vmax 90vmax,
+        110vmax 110vmax,
+        90vmax 90vmax;
+        background-position: 
+        -80vmax -80vmax,
+        60vmax 60vmax,
+        10vmax 10vmax,
+        -30vmax -30vmax,
+        50vmax 50vmax;
+    }
+    25%{
+        background-size: 
+        100vmax 100vmax,
+        90vmax 90vmax,
+        100vmax 100vmax,
+        90vmax 90vmax,
+        60vmax 60vmax;
+        background-position: 
+        -60vmax -100vmax,
+        40vmax 80vmax,
+        30vmax -10vmax,
+        -40vmax -20vmax,
+        70vmax 30vmax;
+    }
+    50%{
+        background-size: 
+        120vmax 120vmax,
+        80vmax 80vmax,
+        70vmax 70vmax,
+        60vmax 60vmax,
+        30vmax 30vmax;
+        background-position: 
+        -70vmax -80vmax,
+        30vmax 70vmax,
+        30vmax 0vmax,
+        -60vmax -40vmax,
+        50vmax 50vmax;
+    }
+    75%{
+        background-size: 
+        90vmax 90vmax,
+        70vmax 70vmax,
+        130vmax 130vmax,
+        70vmax 70vmax,
+        90vmax 90vmax;
+        background-position: 
+        -40vmax -120vmax,
+        50vmax 100vmax,
+        20vmax -30vmax,
+        -70vmax -60vmax,
+        40vmax 20vmax;
+    }
+}
